@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = 4500; // You can change this port number if needed
+const port = 4567; // You can change this port number if needed
 
 // Sample user data (replace this with your actual data)
 const users = [
