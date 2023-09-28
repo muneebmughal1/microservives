@@ -1,0 +1,19 @@
+version: '1'
+services:
+  react-app:
+    build:
+      context: ./react-app
+      dockerfile: Dockerfile
+    image: ${DOCKER_HUB_USERNAME}/react-app:latest
+    ports:
+      - "3000:80"  # Map container port 80 to host port 3000
+    depends_on:
+      - express-node
+
+  express-node:
+    build:
+      context: ./express-node
+      dockerfile: Dockerfile
+    image: ${DOCKER_HUB_USERNAME}/express-node:latest
+    ports:
+      - "4567:4567"
